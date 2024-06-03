@@ -2,15 +2,15 @@ package `in`.janitri.ekacareassignment.di
 
 import android.app.Application
 import androidx.room.Room
+import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import `in`.janitri.ekacareassignment.db.UserDao
-import `in`.janitri.ekacareassignment.db.UserDataBase
-import `in`.janitri.ekacareassignment.repository.Repository
+import `in`.janitri.ekacareassignment.data.UserDao
+import `in`.janitri.ekacareassignment.data.UserDataBase
+import `in`.janitri.ekacareassignment.domain.repository.Repository
 import javax.inject.Singleton
-
+@Module
 @InstallIn(SingletonComponent::class)  //here SingletonComponent signify the life cycle (application)
 object UserModule {
 
@@ -30,7 +30,7 @@ object UserModule {
 
     @Singleton
     @Provides
-    fun provideRepository(userDao: UserDao):Repository{
+    fun provideRepository(userDao: UserDao): Repository {
         return Repository(userDao)
     }
 }

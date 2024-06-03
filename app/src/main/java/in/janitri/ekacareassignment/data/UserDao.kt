@@ -1,11 +1,11 @@
-package `in`.janitri.ekacareassignment.db
+package `in`.janitri.ekacareassignment.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import `in`.janitri.ekacareassignment.db.model.User
+import `in`.janitri.ekacareassignment.domain.model.User
 
 @Dao
 interface UserDao {
